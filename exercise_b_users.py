@@ -62,14 +62,20 @@ print(users["Erik"]["home_town"])
 print(users["Erik"]["lottery_numbers"])
 # 4. Get the species of Avril's pet Monty
 print(users["Avril"]["pets"][0]["species"])
+
 # 5. Get the smallest of Erik's lottery numbers
+
 print(min(users["Erik"]["lottery_numbers"]))
+print(sorted(users['Erik']['lottery_numbers'])[0]) #temp sort, does not effect list structure
 # 6. Return an list of Avril's lottery numbers that are even
 for num in users["Avril"]['lottery_numbers']:
+  even_numbers = []
   if num % 2 == 0:
-    print(num)
+      even_numbers.append(num)
+      print(even_numbers)
 # 7. Erik is one lottery number short! Add the number `7` to be included in his lottery numbers
 users["Erik"]["lottery_numbers"] += [7] 
+users["Erik"]["lottery_numbers"].append(7)
 
 # 8. Change Erik's hometown to Edinburgh
 users["Erik"]["home_town"] = "Edinburgh"
@@ -78,7 +84,7 @@ users["Erik"]["home_town"] = "Edinburgh"
 users["Erik"]['pets'].append({'name': 'fluffy', 'species' : 'dog'})
 #print(users["Erik"]['pets'])
 # 10. Add another person to the users dictionary
-users.update({
+users.update({ #users ['Colin'] =
   "Colin":{
   "twitter": "Ccam20",
   "lottery_numbers": [4, 15, 47, 23, 48, 18],
